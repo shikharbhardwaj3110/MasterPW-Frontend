@@ -1,6 +1,50 @@
+a {
+    text-decoration: none;
+}
+
 .navbar-main {
     background: rgb(2,0,36);
     background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(69,9,121,1) 0%, rgba(0,212,255,1) 100%);
+}
+
+.logindiv {  
+    min-height: 100vh;
+    background: linear-gradient(to right, #EC6EAD, #3494E6); 
+    align-items: center;
+}
+
+.logindivinner {
+    min-height: 100vh;
+}
+
+.loginform {
+    border-radius: 15px;
+    background-color: white;
+    height: 42rem;
+    width: 27%;
+
+}
+
+.innerform {
+    padding: 3rem;
+}
+
+.forminput {
+    border : none ;
+    outline: none;
+}
+
+.forminputdiv {
+    
+    border-bottom: 2px solid #cccccc;
+}
+
+.formbutton {
+    background: linear-gradient(to right, #EC6EAD, #3494E6); 
+    border: none;
+    color: white;
+    border-radius: 15px;
+    height: 2.5rem;
 }
 
 .maindiv {

@@ -23,12 +23,14 @@ function Landing() {
 
                             </button>
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                <li><a class="dropdown-item" href="#">Log in</a></li>
-                                <li><a class="dropdown-item" href="#">Sign up</a></li>
+                                <li><a class="dropdown-item" href="/login">Log in</a></li>
+                                <li><a class="dropdown-item" href="/signup">Sign up</a></li>
                             </ul>
                         </div>
                         <div>
-                            <button class="btn btn-primary btn-sm d-none d-md-inline">Sign up</button>
+                            <Link to="/signup">
+                                <button class="btn btn-primary btn-sm d-none d-md-inline">Sign up</button>
+                            </Link>
                         </div>
                         <div style={{ paddingLeft: '0.5rem' }}>
                             <Link to="/login">
