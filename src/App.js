@@ -1,23 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import Landing from "./components/Landing";
+import Login from "./components/Login";
+import Dashboard from "./components/Dashboard";
+import { useState, useEffect } from 'react'
 
 function App() {
+
+  if ((!(localStorage.getItem('token')))) {
+    return (
+      <div>
+        <Login></Login>
+      </div>
+    )
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Dashboard></Dashboard>
+
     </div>
   );
 }
