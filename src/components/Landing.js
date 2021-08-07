@@ -1,8 +1,10 @@
 import '../css/stylesheet.css'
 import landingImg from '../images/passwordimg.jpg'
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 function Landing() {
+
     return (
         <div class="maindiv">
             <nav class="navbar-main text-light">
@@ -29,7 +31,9 @@ function Landing() {
                             <button class="btn btn-primary btn-sm d-none d-md-inline">Sign up</button>
                         </div>
                         <div style={{ paddingLeft: '0.5rem' }}>
-                            <button class="btn text-light btn-sm d-none d-md-inline btn-login">Log in</button>
+                            <Link to="/login">
+                                <button class="btn text-light btn-sm d-none d-md-inline btn-login">Log in</button>
+                            </Link>
                         </div>
                     </div>
                 </div>

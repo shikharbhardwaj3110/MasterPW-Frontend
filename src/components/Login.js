@@ -14,7 +14,7 @@ function Login() {
         console.log(res)
         if (res.data.token) {
             localStorage.setItem('token', res.data.token) 
-            window.location.reload()
+            window.location.href = 'http://localhost:3000/'
         }
     }
 
