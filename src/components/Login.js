@@ -50,7 +50,7 @@ function Login() {
                         <div style={{marginTop : '2.5rem'}}>
                             <button class="formbutton w-100" onClick={authenticate}>Login</button>
                         </div>
-                        <div class="text-center" style={{marginTop : '9rem'}}>
+                        <div class="text-center bottomnavlink" style={{marginTop : '9rem'}}>
                             <span style={{color : 'gray'}}>Don't have an account ?</span>
                             <p>
                                 <a href="/signup" style={{fontWeight : 'bold', color : '#828282'}}>Sign up. </a>

@@ -1,3 +1,7 @@
+body {
+    background: linear-gradient(to right, #EC6EAD, #3494E6); 
+}
+
 a {
     text-decoration: none;
 }
@@ -158,4 +162,21 @@ hr {
         padding-top: 1.5rem !important;
         margin-top: 2rem !important;
     }
+    .loginform {
+        border-radius: 15px !important;
+        background-color: white !important;
+        max-height: 70% !important;
+        width: 85% !important;
+    }
+
+    .bottomnavlink {
+        margin-top: 2rem !important;
+    }
+
+    .logindiv {  
+        min-height: 100vh;
+        background: linear-gradient(to right, #EC6EAD, #3494E6); 
+        align-items: center;
+    }
+
   }
