@@ -61,7 +61,7 @@ function Signup() {
                     </div>
                     
                     <div style={{marginTop : '2.5rem'}}>
-                        <button class="formbutton w-100">Sign up</button>
+                        <button class="formbutton w-100" onClick={register}>Sign up</button>
                     </div>
                     <div class="text-center bottomnavlink" style={{marginTop : '5rem'}}>
                         <span style={{color : 'gray'}}>Already have an account ?</span>
