@@ -11,6 +11,7 @@ function Dashboard() {
     }
 
     const [passwords, setPasswords] = useState([])
+    const [utils, setUtils] = useState(0)
 
     useEffect(() => {
         axios.get('http://127.0.0.1:3001/getPasswords/sort/1', {
@@ -18,10 +19,21 @@ function Dashboard() {
                 'Authorization': 'Bearer ' + localStorage.getItem('token')
             }
         }).then(result => {
-            console.log(result.data)
+            console.log(result.data.length)
             setPasswords(result.data)
+            setUtils(checkUnique())
         });
     }, [])
+
+    function checkUnique () {
+        const myMap = new Map()
+        passwords.forEach(obj => {
+            const utilLower = obj.utilName.toLowerCase()
+            myMap.set(utilLower,1)
+        })
+        console.log(myMap)
+        return myMap.length
+    }
 
     return (
         <div class="bg-light">
@@ -50,7 +62,7 @@ function Dashboard() {
                 </div>
             </nav>
 
-        <Stats></Stats>
+        <Stats passwords={passwords.length} utilities={utils}></Stats>
         <Passwords props={passwords}></Passwords>
         </div>
     )
