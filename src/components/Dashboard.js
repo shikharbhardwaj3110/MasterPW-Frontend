@@ -35,9 +35,6 @@ function Dashboard() {
         return myMap.length
     }
 
-    function parentTest () {
-        console.log("Inside dashboard !")
-    }
 
     return (
         <div class="bg-light" >
@@ -68,7 +65,7 @@ function Dashboard() {
 
 
             <Stats passwords={passwords.length} utilities={utils}></Stats>
-            <Passwords props={passwords} testfn={parentTest}></Passwords>
+            <Passwords props={passwords}></Passwords>
 
         </div>
     )

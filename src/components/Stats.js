@@ -6,8 +6,8 @@ function Stats({passwords, utilities}) {
         <div style={{ paddingTop: '3rem', paddingLeft: '3rem', paddingRight: '3rem'}} class="statsdiv">
             <div class="d-flex flex-lg-row flex-column">
                 <div style={{flex : 2, paddingRight : '2rem'}} class="outerstatsdiv">
-                    <div class="greetingdiv bg-primary" style={{borderRadius : '15px', height : '7rem', padding : '1rem', textAlign : 'center', paddingTop : '20px'}}>
-                        <span class="display-5 greetingfont" style={{fontSize : '2.2rem', color : 'white'}}>Welcome back, {localStorage.getItem('username')}</span>
+                    <div class="bg-light" style={{borderRadius : '15px', height : '7rem', padding : '1rem', textAlign : 'center', paddingTop : '20px', border : '2px solid #bfbfbf'}}>
+                        <span class="display-5 greetingfont" style={{fontSize : '2.2rem', color : 'black'}}>Welcome back, {localStorage.getItem('username')}</span>
                     </div>
                 </div>
                 <div style={{flex : 1.5, paddingRight : '2rem'}} class="outerstatsdiv2">
