@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 
 
-function PasswordCard({ props, handleUpdation }) {
+function PasswordCard({ props, handleUpdation}) {
 
 
     function timeConverter(UNIX_timestamp) {
@@ -19,12 +19,31 @@ function PasswordCard({ props, handleUpdation }) {
 
     const [hidden, setHidden] = useState(1)
 
+    const [del, setDel] = useState('none')
+
     console.log(props)
+
+    function delHandler() {
+        console.log("del handler called")
+        if(del=='none')
+            setDel('block')
+        else
+            setDel('none')
+    }
+
+    function deletePassword () {
+        handleUpdation(props.timestamp)
+        setDel('none')
+    }
+
+    function hideDiv () {
+        setDel('none')
+    }
 
     //console.log(props)
     return (
         <div style={{ minHeight: '8rem', display: 'flex', flexDirection: 'column', marginTop: '1rem' }}>
-            <div class="cardbg text-light" style={{ flex: 2, paddingLeft: '2rem', paddingTop: '1rem', borderTopLeftRadius: '15px', borderTopRightRadius: '15px', paddingBottom: '1rem' }}>
+            <div class="cardbg text-light" style={{ flex: 2, paddingLeft: '2rem', paddingTop: '0.2rem', borderTopLeftRadius: '15px', borderTopRightRadius: '15px', paddingBottom: '1rem' }}>
                 <br></br>
                 <h5 class="display-5" style={{ fontSize: '1.2rem' }}>Utility  :  {props.utilName}</h5>
                 <h5 class="display-5" style={{ fontSize: '1.2rem' }}>Username  :  {props.utilUsername}</h5>
@@ -34,8 +53,11 @@ function PasswordCard({ props, handleUpdation }) {
             <div class="bg-light" style={{ flex: 1, borderBottomLeftRadius: '15px', borderBottomRightRadius: '15px', borderLeft: '1px solid #bfbfbf', borderBottom: '1px solid #bfbfbf', borderRight: '1px solid #bfbfbf', borderTop: '1px solid #e8e6e6' }}>
                 <div style={{ paddingLeft: '2rem', display: 'flex', paddingRight: '1rem', justifyContent: 'space-between', alignItems: 'center' }}>
                     <h5 class="display-5" style={{ fontSize: '1rem', marginTop: '0.2rem' }} > {timeConverter(props.timestamp)}</h5>
-                    <i class="fas fa-trash-alt text-danger" onClick={() => handleUpdation(props.timestamp)}></i>
+                    <i class="fas fa-trash-alt text-danger" onClick={delHandler} style={{cursor : 'pointer'}} title="Delete"></i>
                 </div>
+            </div>
+            <div style={{borderBottom : '2px solid #bfbfbf', textAlign : 'center', paddingTop : '0.5rem', paddingBottom : '0.5rem', display : del}}>
+                <span>Are you sure ? </span><button type="button" class="btn-sm btn-danger" style={{marginLeft : '0.5rem'}} onClick={deletePassword}>Yes</button><button class="btn-sm btn-warning" style={{marginLeft : '0.5rem'}} onClick={hideDiv}>No</button>
             </div>
         </div>
     )
